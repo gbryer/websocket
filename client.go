@@ -7,8 +7,8 @@ package websocket
 import (
 	"bytes"
 	"context"
+	"crypto/tls"
 	"errors"
-	tls "github.com/refraction-networking/utls"
 	"io"
 	"io/ioutil"
 	"net"

@@ -5,7 +5,8 @@ package websocket
 
 import (
 	"context"
-	tls "github.com/refraction-networking/utls"
+	"crypto/tls"
+	//tls "github.com/refraction-networking/utls"
 )
 
 func doHandshake(ctx context.Context, tlsConn *TLSConn, cfg *tls.Config) error {
