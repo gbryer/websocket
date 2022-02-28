@@ -7,8 +7,8 @@ package websocket
 import (
 	"bytes"
 	"context"
-	"crypto/tls"
 	"errors"
+	tls "github.com/refraction-networking/utls"
 	"io"
 	"io/ioutil"
 	"net"
@@ -109,6 +109,13 @@ type Dialer struct {
 	// If Jar is nil, cookies are not sent in requests and ignored
 	// in responses.
 	Jar http.CookieJar
+
+	// If this field is not
+	// nil, we'll use it. Otherwise we'll default to using the
+	// oohttp.TLSClientFactory global factory. (But, if you set the
+	// DialTLSContext function, you'll completely bypass this
+	// per-Transport-or-global TLSClientFactory mechanism.)
+	TLSClientFactory func(conn net.Conn, config *tls.Config) TLSConn
 }
 
 // Dial creates a new client connection by calling DialContext with a background context.
@@ -340,13 +347,15 @@ func (d *Dialer) DialContext(ctx context.Context, urlStr string, requestHeader h
 		if cfg.ServerName == "" {
 			cfg.ServerName = hostNoPort
 		}
-		tlsConn := tls.Client(netConn, cfg)
+
+		tlsConn := d.TLSClientFactory(netConn, cfg)
 		netConn = tlsConn
 
+		//Trace unsupported
 		if trace != nil && trace.TLSHandshakeStart != nil {
 			trace.TLSHandshakeStart()
 		}
-		err := doHandshake(ctx, tlsConn, cfg)
+		err := doHandshake(ctx, &tlsConn, cfg)
 		if trace != nil && trace.TLSHandshakeDone != nil {
 			trace.TLSHandshakeDone(tlsConn.ConnectionState(), err)
 		}
