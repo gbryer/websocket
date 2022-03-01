@@ -1,5 +1,7 @@
 github.com/gbryer/oohttp v0.0.2 h1:kwGLXFTBDKnRIUv6jzjOD/oPVC18ku28IDfL2qw15tQ=
 github.com/gbryer/oohttp v0.0.2/go.mod h1:PZQD94Cviv4fw02qIWIfG+c9l6NDdpQa1gP2Kgq+oes=
+github.com/gbryer/oohttp v0.0.3 h1:wNhOYz3TrXanfrhP+K+BeTvFV6pu4UWDzuUfJSToBc4=
+github.com/gbryer/oohttp v0.0.3/go.mod h1:PZQD94Cviv4fw02qIWIfG+c9l6NDdpQa1gP2Kgq+oes=
 github.com/refraction-networking/utls v1.0.0 h1:6XQHSjDmeBCF9sPq8p2zMVGq7Ud3rTD2q88Fw8Tz1tA=
 github.com/refraction-networking/utls v1.0.0/go.mod h1:tz9gX959MEFfFN5whTIocCLUG57WiILqtdVxI8c6Wj0=
 golang.org/x/crypto v0.0.0-20220214200702-86341886e292 h1:f+lwQ+GtmgoY+A2YaQxlSOnDjXcQ7ZRLWOHbC6HtRqE=
