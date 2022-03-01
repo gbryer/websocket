@@ -6,10 +6,10 @@ package main
 
 import (
 	"flag"
+	"github.com/gbryer/oohttp"
 	"html/template"
 	"io/ioutil"
 	"log"
-	"net/http"
 	"os"
 	"strconv"
 	"time"

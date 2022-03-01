@@ -5,7 +5,7 @@
 package websocket
 
 import (
-	"net/http"
+	"github.com/gbryer/oohttp"
 	"reflect"
 	"testing"
 )

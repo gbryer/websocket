@@ -6,8 +6,8 @@ package main
 
 import (
 	"bytes"
+	"github.com/gbryer/oohttp"
 	"log"
-	"net/http"
 	"time"
 
 	"github.com/gorilla/websocket"

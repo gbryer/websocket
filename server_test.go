@@ -7,8 +7,8 @@ package websocket
 import (
 	"bufio"
 	"bytes"
+	"github.com/gbryer/oohttp"
 	"net"
-	"net/http"
 	"reflect"
 	"strings"
 	"testing"

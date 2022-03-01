@@ -8,8 +8,8 @@ import (
 	"bufio"
 	"encoding/base64"
 	"errors"
+	"github.com/gbryer/oohttp"
 	"net"
-	"net/http"
 	"net/url"
 	"strings"
 )

@@ -6,8 +6,8 @@ package main
 
 import (
 	"flag"
+	"github.com/gbryer/oohttp"
 	"log"
-	"net/http"
 )
 
 var addr = flag.String("addr", ":8080", "http service address")

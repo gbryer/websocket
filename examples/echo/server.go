@@ -9,9 +9,9 @@ package main
 
 import (
 	"flag"
+	"github.com/gbryer/oohttp"
 	"html/template"
 	"log"
-	"net/http"
 
 	"github.com/gorilla/websocket"
 )

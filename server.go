@@ -7,8 +7,8 @@ package websocket
 import (
 	"bufio"
 	"errors"
+	"github.com/gbryer/oohttp"
 	"io"
-	"net/http"
 	"net/url"
 	"strings"
 	"time"

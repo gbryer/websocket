@@ -7,9 +7,9 @@ package main
 import (
 	"bufio"
 	"flag"
+	"github.com/gbryer/oohttp"
 	"io"
 	"log"
-	"net/http"
 	"os"
 	"os/exec"
 	"time"

@@ -8,9 +8,9 @@ package main
 import (
 	"errors"
 	"flag"
+	"github.com/gbryer/oohttp"
 	"io"
 	"log"
-	"net/http"
 	"time"
 	"unicode/utf8"
 

@@ -13,14 +13,14 @@ import (
 	"encoding/binary"
 	"errors"
 	"fmt"
+	"github.com/gbryer/oohttp"
+	"github.com/gbryer/oohttp/cookiejar"
+	"github.com/gbryer/oohttp/httptest"
+	"github.com/gbryer/oohttp/httptrace"
 	"io"
 	"io/ioutil"
 	"log"
 	"net"
-	"net/http"
-	"net/http/cookiejar"
-	"net/http/httptest"
-	"net/http/httptrace"
 	"net/url"
 	"reflect"
 	"strings"
@@ -568,7 +568,7 @@ func (w testLogWriter) Write(p []byte) (int, error) {
 	return len(p), nil
 }
 
-// TestHost tests handling of host names and confirms that it matches net/http.
+// TestHost tests handling of host names and confirms that it matches github.com/gbryer/oohttp.
 func TestHost(t *testing.T) {
 
 	upgrader := Upgrader{}
@@ -594,7 +594,7 @@ func TestHost(t *testing.T) {
 	wsProtos := map[*httptest.Server]string{server: "ws://", tlsServer: "wss://"}
 	httpProtos := map[*httptest.Server]string{server: "http://", tlsServer: "https://"}
 
-	// Avoid log noise from net/http server by logging to testing.T
+	// Avoid log noise from github.com/gbryer/oohttp server by logging to testing.T
 	server.Config.ErrorLog = log.New(testLogWriter{t}, "", 0)
 	tlsServer.Config.ErrorLog = server.Config.ErrorLog
 
@@ -730,7 +730,7 @@ func TestHost(t *testing.T) {
 
 		check(wsProtos)
 
-		// Confirm that net/http has same result
+		// Confirm that github.com/gbryer/oohttp has same result
 
 		transport := &http.Transport{
 			Dial:            dialer.NetDial,
